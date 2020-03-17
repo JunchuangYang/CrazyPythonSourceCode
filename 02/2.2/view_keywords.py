@@ -1,6 +1,6 @@
 # coding: utf-8
 #########################################################################
-# 网站: <a href="http://www.crazyit.org">疯狂Java联盟</a>               #
+# 锟斤拷站: <a href="http://www.crazyit.org">锟斤拷锟絁ava锟斤拷锟斤拷</a>               #
 # author yeeku.H.lee kongyeeku@163.com                                  #
 #                                                                       #
 # version 1.0                                                           #
@@ -13,7 +13,7 @@
 #                                                                       #
 # <br>Date:                                                             #
 #########################################################################
-# 导入keyword模块
+# 瀵煎叆keyboard妯″潡
 import keyword
-# 显示所有关键字
+# 鏄剧ず鎵�鏈夊叧閿瓧
 keyword.kwlist
