@@ -50,5 +50,5 @@ def my_test(a):
 # 打印my_test函数，将看到实际上是bar函数
 print(my_test) # <function foo.<locals>.bar at 0x00000000021FABF8>
 # 下面代码看上去是调用my_test()，其实是调用bar()函数
-my_test(10)
+#my_test(10)
 my_test(6, 5)

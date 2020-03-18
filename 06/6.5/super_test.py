@@ -25,14 +25,23 @@ class Customer:
     def info (self):
         print('我是一个顾客，我的爱好是: %s,地址是%s' % (self.favorite, self.address))
 # Manager继承了Employee、Customer
-class Manager(Employee, Customer):
+class Manager( Employee,Customer,):
     # 重写父类的构造方法
     def __init__(self, salary, favorite, address):
         print('--Manager的构造方法--')
         # 通过super()函数调用父类的构造方法
         super().__init__(salary)
-        # 与上一行代码的效果相同
+        #与上一行代码的效果相同
 #        super(Manager, self).__init__(salary)
+        '''
+        super().__init__(salary)
+        super().__init__(favorite, address)
+        不能同时使用，有歧义
+        super(Employee, self).__init__(salary)
+        super(Customer, self).__init__( favorite, address)
+        也不能同时使用
+        '''
+        print(super())
         # 使用未绑定方法调用父类的构造方法
         Customer.__init__(self, favorite, address)
 # 创建Manager对象

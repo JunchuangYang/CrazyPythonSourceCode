@@ -15,7 +15,7 @@
 #########################################################################
 class BaseClass:
     def foo (self):
-        print('父类中定义的foo方法')
+        print(self,'父类中定义的foo方法')
 class SubClass(BaseClass):
     # 重写父类的foo方法
     def foo (self):
@@ -26,5 +26,6 @@ class SubClass(BaseClass):
         self.foo() 
         # 使用类名调用实例方法（未绑定方法）调用父类被重写的方法
         BaseClass.foo(self)
+        super().foo()
 sc = SubClass()
 sc.bar()
