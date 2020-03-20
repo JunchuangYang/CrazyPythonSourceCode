@@ -1,0 +1,48 @@
+Traceback (most recent call last):
+  File "D:/CrazyPython_SourceCode/07/7.4/traceback_test2.py", line 29, in <module>
+    main()
+  File "D:/CrazyPython_SourceCode/07/7.4/traceback_test2.py", line 21, in main
+    firstMethod()
+  File "D:/CrazyPython_SourceCode/07/7.4/traceback_test2.py", line 23, in firstMethod
+    secondMethod()
+  File "D:/CrazyPython_SourceCode/07/7.4/traceback_test2.py", line 25, in secondMethod
+    thirdMethod()
+  File "D:/CrazyPython_SourceCode/07/7.4/traceback_test2.py", line 27, in thirdMethod
+    raise SelfException("自定义异常信息")
+SelfException: 自定义异常信息
+Traceback (most recent call last):
+  File "D:/CrazyPython_SourceCode/07/7.4/traceback_test2.py", line 29, in <module>
+    main()
+  File "D:/CrazyPython_SourceCode/07/7.4/traceback_test2.py", line 21, in main
+    firstMethod()
+  File "D:/CrazyPython_SourceCode/07/7.4/traceback_test2.py", line 23, in firstMethod
+    secondMethod()
+  File "D:/CrazyPython_SourceCode/07/7.4/traceback_test2.py", line 25, in secondMethod
+    thirdMethod()
+  File "D:/CrazyPython_SourceCode/07/7.4/traceback_test2.py", line 27, in thirdMethod
+    raise SelfException("自定义异常信息")
+SelfException: 自定义异常信息
+Traceback (most recent call last):
+  File "D:/CrazyPython_SourceCode/07/7.4/traceback_test2.py", line 29, in <module>
+    main()
+  File "D:/CrazyPython_SourceCode/07/7.4/traceback_test2.py", line 21, in main
+    firstMethod()
+  File "D:/CrazyPython_SourceCode/07/7.4/traceback_test2.py", line 23, in firstMethod
+    secondMethod()
+  File "D:/CrazyPython_SourceCode/07/7.4/traceback_test2.py", line 25, in secondMethod
+    thirdMethod()
+  File "D:/CrazyPython_SourceCode/07/7.4/traceback_test2.py", line 27, in thirdMethod
+    raise SelfException("自定义异常信息")
+SelfException: 自定义异常信息
+Traceback (most recent call last):
+  File "D:/CrazyPython_SourceCode/07/7.4/traceback_test2.py", line 29, in <module>
+    main()
+  File "D:/CrazyPython_SourceCode/07/7.4/traceback_test2.py", line 21, in main
+    firstMethod()
+  File "D:/CrazyPython_SourceCode/07/7.4/traceback_test2.py", line 23, in firstMethod
+    secondMethod()
+  File "D:/CrazyPython_SourceCode/07/7.4/traceback_test2.py", line 25, in secondMethod
+    thirdMethod()
+  File "D:/CrazyPython_SourceCode/07/7.4/traceback_test2.py", line 27, in thirdMethod
+    raise SelfException("自定义异常信息")
+SelfException: 自定义异常信息

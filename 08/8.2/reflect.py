@@ -17,7 +17,7 @@ class Comment:
     def __init__ (self, detail, view_times):
         self.detail = detail
         self.view_times = view_times
-    def info ():
+    def info (self):
         print("一条简单的评论，内容是%s" % self.detail)
         
 c = Comment('疯狂Python讲义很不错', 20)
