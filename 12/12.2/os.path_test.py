@@ -28,6 +28,7 @@ print(os.path.dirname('abc/xyz/README.txt')) #abc/xyz
 print(os.path.exists('abc/xyz/README.txt')) # False
 # 获取最近一次访问时间
 print(time.ctime(os.path.getatime('os.path_test.py')))
+print(os.path.getatime('os.path_test.py'))#1584926845.5024953
 # 获取最后一次修改时间
 print(time.ctime(os.path.getmtime('os.path_test.py')))
 # 获取创建时间
