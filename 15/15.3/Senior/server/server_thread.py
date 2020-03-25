@@ -14,7 +14,7 @@
 # <br>Date:                                                             #
 #########################################################################
 import CrazyitProtocol
-
+# s:对应的socket，clients：用户与socket对应的字典
 def server_target(s, clients):
     try:
         while True:
