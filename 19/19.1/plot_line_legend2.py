@@ -28,7 +28,9 @@ import matplotlib.font_manager as fm
 # 使用Matplotlib的字体管理器加载中文字体
 my_font=fm.FontProperties(fname="C:\Windows\Fonts\msyh.ttf") 
 # 调用legend函数设置图例
-plt.legend(loc='best')
+#plt.legend(prop=my_font,loc='best')
+#修改maotplotlib的配置文件后可以不用指定字体
+plt.legend(prop=my_font,loc='best')
 # 调用show()函数显示图形
 plt.show()
 

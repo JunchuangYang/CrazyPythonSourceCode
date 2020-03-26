@@ -25,7 +25,9 @@ plt.subplot(2, 2, 1)
 plt.plot(x_data, np.sin(x_data))
 plt.gca().spines['right'].set_color('none')
 plt.gca().spines['top'].set_color('none')
-plt.gca().spines['bottom'].set_position(('data', 0))
+#设置横坐标轴对应的纵坐标轴的数值
+plt.gca().spines['bottom'].set_position(('data', 1))
+#设置纵坐标轴所对应的横坐标的数值
 plt.gca().spines['left'].set_position(('data', 0))
 plt.title('正弦曲线')
 

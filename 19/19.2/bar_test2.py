@@ -34,7 +34,7 @@ plt.bar(x=np.arange(len(x_data))+bar_width+0.05, height=y_data2,
 for x, y in enumerate(y_data):
     plt.text(x, y + 100, '%s' % y, ha='center', va='bottom')
 for x, y in enumerate(y_data2):
-    plt.text(x+bar_width, y + 100, '%s' % y, ha='center', va='top')
+    plt.text(x+bar_width, y + 100, '%s' % y, ha='center', va='bottom')
 # 为X轴设置刻度值
 plt.xticks(np.arange(len(x_data))+bar_width/2, x_data)
 # 设置标题

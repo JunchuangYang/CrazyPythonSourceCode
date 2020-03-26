@@ -29,7 +29,7 @@ def get_html(city, year, month):  #①
         'AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36')
     response = urlopen(request)
     # 获取服务器响应
-    return response.read().decode('gbk')
+    return response.read().decode('utf-8')
  
 # 定义3个list列表作为展示的数据
 dates, highs, lows = [], [], []
@@ -44,34 +44,39 @@ for month in months:
     # 将html响应拼起来
     text = "".join(html.split())
     # 定义包含天气信息的div的正则表达式
-    patten = re.compile('<divclass="tqtongji2">(.*?)</div><divstyle="clear:both">')
+    patten = re.compile('<divclass="lishitable">(.*?)</div></div></div>')
+
     table = re.findall(patten, text)
-    patten1 = re.compile('<ul>(.*?)</ul>')
+    patten1 = re.compile('<ulclass="lishitable_contentclearfix">(.*?)</ul>')
     uls = re.findall(patten1, table[0])
     for ul in uls:
         # 定义解析天气信息的正则表达式
         patten2 = re.compile('<li>(.*?)</li>')
         lis = re.findall(patten2, ul)
-        # 解析得到日期数据
-        d_str = re.findall('>(.*?)</a>', lis[0])[0]
-        try:
-            # 将日期字符串格式化为日期
-            cur_day = datetime.strptime(d_str, '%Y-%m-%d')
-            # 解析得到最高气温和最低气温
-            high = int(lis[1])
-            low = int(lis[2])
-        except ValueError:
-            print(cur_day, '数据出现错误')
-        else:
-            # 计算前、后两天数据的时间差
-            diff = cur_day - prev_day
-            # 如果前、后两天数据的时间差不是相差一天，说明数据有问题
-            if diff != timedelta(days=1):
-                print('%s之前少了%d天的数据' % (cur_day, diff.days - 1))
-            dates.append(cur_day)
-            highs.append(high)
-            lows.append(low)
-            prev_day = cur_day
+        lis += re.findall('<liclass="hide">(.*?)</li>',ul)
+        for li in lis:
+            # 解析得到日期数据
+            d_str = re.findall('">(.*?)</a>', li)
+            try:
+                # 将日期字符串格式化为日期
+                cur_day = datetime.strptime(d_str[0], '%Y-%m-%d')
+                # 解析得到最高气温和最低气温
+                high = int(re.findall('<divstyle="width:100px">(.*?)</div>',li)[0])
+                low = int(re.findall('<div>(.*?)</div>',li)[1])
+            except ValueError:
+                print(cur_day, '数据出现错误')
+            else:
+                # 计算前、后两天数据的时间差
+                diff = cur_day - prev_day
+                # 如果前、后两天数据的时间差不是相差一天，说明数据有问题
+                if diff != timedelta(days=1):
+                    print('%s之前少了%d天的数据' % (cur_day, diff.days - 1))
+                dates.append(cur_day)
+                highs.append(high)
+                lows.append(low)
+                prev_day = cur_day
+
+#print(dates)
 # 配置图形
 fig = plt.figure(dpi=128, figsize=(12, 9))
 # 绘制最高气温的折线

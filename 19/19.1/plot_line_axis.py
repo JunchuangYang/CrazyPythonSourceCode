@@ -38,6 +38,8 @@ plt.title('疯狂图书的历年销量')
 # 第一个参数是点的位置，第二个参数是点的文字提示
 plt.yticks([50000, 70000, 100000],
     [r'挺好', r'优秀', r'火爆'])
+
+#获取数据图上的坐标轴对象，他是一个AxesSubplot对象
 ax = plt.gca()
 # 设置将X轴的刻度值放在底部X轴上
 ax.xaxis.set_ticks_position('bottom')
